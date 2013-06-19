@@ -1,0 +1,64 @@
+{
+    "locals": {
+        "url": "http://localhost:8080",
+        "name": "Andy Hulstkamp",
+        "owner": "Andreas Hulstkamp",
+        "description": "creating online experiences",
+        "signature": "AH",
+        "nav": [
+            {
+                "name": "HOME",
+                "cssClass": "home",
+                "pikto": "a",
+                "description": "Home Page",
+                "url": "/"
+            },
+            {
+                "name": "INDEX",
+                "cssClass": "index",
+                "pikto": "J",
+                "description": "Index by Tags",
+                "url": "/tagindex/"
+            },
+            {
+                "name": "TIMELINE",
+                "cssClass": "bydate",
+                "pikto": "{",
+                "description": "posts ordered by date",
+                "url": "/timeline/"
+            },
+            {
+                "name": "ABOUT",
+                "cssClass": "about",
+                "pikto": "Y",
+                "description": "About",
+                "url": "/about/"
+            },
+            {
+                "name": "CONTACT",
+                "cssClass": "contact",
+                "pikto": "@",
+                "description": "contact me",
+                "url": "/contact/"
+            }
+        ]
+    },
+    "plugins": [
+        "./plugins/paginator.coffee"
+    ],
+    "require": {
+        "moment": "moment",
+        "_": "underscore",
+        "typogr": "typogr"
+    },
+    "jade": {
+        "pretty": true
+    },
+    "markdown": {
+        "smartLists": true,
+        "smartypants": true
+    },
+    "paginator": {
+        "perPage": 7
+    }
+}

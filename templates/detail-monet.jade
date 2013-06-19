@@ -1,0 +1,13 @@
+extends detail-base
+block append vars
+    - containerClass = 'detail-page';
+block prepend head
+  link(rel='stylesheet', href="stylesheets/ahimpr.css")
+block append head
+  script(type='text/javascript', src='js/ah.js').
+  script(type='text/javascript', src='js/modernizr.js').
+  script(type="text/javascript", src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js").
+  script(type="text/javascript").
+    $(document).ready(function () {
+      AHUI.setupDiashow($(".photobox"),$(".keyControlHolder"));
+    });

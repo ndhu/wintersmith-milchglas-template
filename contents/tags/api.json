@@ -1,0 +1,7 @@
+{
+  "id": "api",
+  "name": "API",
+  "cssClass": "api",
+  "description": "library, api",
+  "template": "tag.jade"
+}

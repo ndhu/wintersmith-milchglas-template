@@ -1,0 +1,27 @@
+extends layout
+block append vars
+    - containerClass = 'detail-page';
+block header
+    span
+block navigation
+    div.detail-nav.pure-g-r
+        div.pure-u-1-2
+            a.icon-link.newer.left(href="./")
+                span.text.text-right Back to article
+                img.icon.icon-left(src="/svg/53_b.svg")
+        div.pure-u-1-2
+            mixin nav('NONE')
+block content
+  article.post
+    section.detail!= page.html
+block paging
+    span
+block footer
+    div.pure-g-r
+        div.copy.pure-u-1
+            span #{ new Date().getFullYear() }
+            span  by #{ locals.owner }
+
+
+
+

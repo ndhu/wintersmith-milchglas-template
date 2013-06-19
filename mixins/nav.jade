@@ -1,0 +1,12 @@
+mixin nav(activeName)
+    nav.main-navi(id="mainNavi")
+        #naviToggle.navi-toggle
+            img(src='/svg/59_o.svg')
+        ul.nav-items(id="naviList", class='#{activeName}')
+            each item in locals.nav
+                if item.name == activeName
+                    li.nav-item.active
+                        a.button.transparent(href=item.url)= item.name
+                else
+                    li.nav-item
+                        a.button.transparent(href=item.url)= item.name

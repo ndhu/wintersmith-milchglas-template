@@ -1,0 +1,7 @@
+{
+  "id": "sass",
+  "name": "sass",
+  "cssClass": "sass",
+  "description": "sass",
+    "template": "tag.jade"
+}

@@ -1,0 +1,727 @@
+@import "compass/css3/background-size";
+@import "compass/css3/border-radius";
+@import "compass/css3/text-shadow";
+@import "compass/css3/box-shadow";
+@import "compass/css3/transition";
+@import "compass/css3/transform";
+@import "compass/css3/opacity";
+
+//globals
+$primaryColor: #339D8B;
+//#EB2D88;
+$secondaryColor: #ED6D43;
+$lightColor: #f4f4f4;
+$darkColor: #333;
+$darkenShadePercent: 5%;
+$lightenShadePercent: 5%;
+$border: 1px solid darken($lightColor, $lightenShadePercent);
+$opacity: 1;
+
+//header
+$headerColor: darken($primaryColor, 5 * $darkenShadePercent);
+$photoSideLength: 130px;
+
+//article
+$articleBorderRadius: 0;
+//0.75rem;
+
+//header
+$headerFontColor: lighten($primaryColor, 35%);
+
+//section
+$sectionFontColor: $primaryColor;
+$sectionBackgroundColor: $lightColor;
+
+//button styles
+$buttonPadding: 0.5rem;
+$buttonBorderRadius: 0.25rem;
+$buttonHoverLightning: 10%;
+$buttonFontSize: .8rem;
+
+/**
+* Global styles
+*/
+html {
+  font-size: 100%;
+  width: 100%;
+}
+
+body {
+  //background: white url("../img/bg-3.jpg") no-repeat top center;
+  background-color: $lightColor;
+  //@include background-size(cover);
+}
+
+.container {
+  width: 100%;
+  margin: auto;
+  max-width: 760px;
+
+  &.detail-page {
+    max-width: 100%;
+
+    article section {
+      border: none;
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $secondaryColor;
+
+  &:hover {
+    // text-decoration: underline;
+    color: lighten($secondaryColor, 3 * $lightenShadePercent);
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 400;
+  color: $primaryColor;
+  @include text-shadow(0px 1px 1px rgba(#333, 0.25));
+
+  a {
+    color: $primaryColor;
+
+    &:hover {
+      color: lighten($primaryColor, 5 * $lightenShadePercent);
+    }
+  }
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4, h5, h6 {
+  @include text-shadow(none);
+  color: $darkColor;
+}
+
+p {
+  font-family: 'Open Sans', sans-serif;
+}
+
+/*
+ * Global secondary (nested) elements
+ * secondary elements occur on several place across the entire site
+ * and are usually nested within primary elemnts (article, header, section, footer)
+ */
+.date {
+  //width: 10rem;
+  margin: 1rem auto 0;
+  padding: 0;
+  //background-color: white;
+  //margin-top: -1rem;
+  text-align: center;
+  color: $darkColor;
+  font-size: 1rem;
+  line-height: 2rem;
+}
+
+.tags {
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: $darkColor;
+  margin: 0.75rem 0;
+}
+
+.more {
+  display: block;
+  margin-top: 2rem;
+  a {
+    color: $lightColor;
+    background-color: $darkColor;
+
+    &:hover {
+      background-color: lighten($darkColor, 3 * $lightenShadePercent);
+    }
+  }
+}
+
+/**
+ * Header with photo, site title tagline
+ */
+.header {
+  margin: 4rem auto 2rem;
+  width: 510px;
+  height: 150px;
+  box-sizing: border-box;
+
+  .image {
+    float: left;
+    padding-right: 2rem;
+  }
+
+  .photo {
+    height: $photoSideLength;
+    width: $photoSideLength;
+    @include border-radius($photoSideLength/2 $photoSideLength/2);
+    background: transparent url("../img/andy.jpg") no-repeat center center;
+    @include box-shadow(0px 0px $photoSideLength #000 inset);
+    border: $border;
+  }
+
+  .signature {
+    margin: 0rem auto 1rem;
+
+    h1, p {
+      padding: 0;
+      margin: 0;
+    }
+    h1 {
+      //font: sans-serif;
+      @include text-shadow(0 1px 0px white);
+      font-size: 3rem;
+      line-height: 3rem;
+      font-weight: 700;
+      //font-family: 'Open Sans';
+      text-transform: uppercase;
+      padding: 0;
+      margin: 0;
+
+      a {
+        color: $headerColor;
+      }
+    }
+    p {
+      color: darken($headerColor, 35%);
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+  }
+}
+
+nav.main-navi {
+  height: 3rem;
+
+  .navi-toggle {
+    display: none;
+  }
+
+  ul.nav-items {
+    float: right;
+    li.nav-item {
+      list-style-type: none;
+      display: inline-block;
+      margin-left: 0.5rem;
+
+      &.active a {
+        color: $lightColor;
+        background-color: $darkColor;
+        border-color: $darkColor;
+      }
+    }
+  }
+}
+
+.detail-nav {
+  padding: 0.5rem;
+  background-color: darken($lightColor, $lightenShadePercent);
+}
+
+.content {
+  clear: both;
+
+  pre {
+    overflow-x: scroll;
+    white-space: pre;
+    word-wrap: normal;
+    //monokai for overflowed element
+    background-color: #272822;
+  }
+}
+
+article {
+
+  margin: 3rem 0;
+
+  header {
+    @include border-radius($articleBorderRadius $articleBorderRadius 0 0);
+    background-color: $lightColor;
+    padding: 1rem;
+    border: $border;
+    box-sizing: border-box;
+    opacity: $opacity;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+    padding: 0;
+    margin: 0.35rem 0;
+
+  }
+
+  section {
+    box-sizing: border-box;
+    background-color: $sectionBackgroundColor;
+    padding: 2rem 3rem;
+    border: $border;
+    border-top: none;
+
+    &.about {
+      border-top: $border;
+    }
+
+    p {
+      margin: 1rem 0;
+      line-height: 1.75rem;
+    }
+  }
+
+  img {
+    margin: 1rem 0;
+  }
+
+  .further-readings {
+    h3 {
+      letter-spacing: .25rem;
+      padding: 1rem;
+      margin: 0rem auto 0rem;
+      text-align: center;
+      @include text-shadow(none);
+      background-color: $lightColor;
+    }
+    h4 {
+      width: 95%;
+    }
+    a {
+      color: $darkColor;
+
+      &:hover {
+        color: $secondaryColor;
+      }
+    }
+    p {
+      padding-right: 1rem;
+    }
+  }
+}
+
+.clipped {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/*
+ * Footer
+ */
+
+footer {
+  margin: 3em 0;
+  border-top: $border;
+
+  .footer-links {
+    margin: 2rem 0;
+    //height: 4.2rem;
+  }
+  .icon-link {
+    display: block;
+    cursor: pointer;
+    opacity: 0.25;
+    width: 5rem;
+    height: 8rem;
+    text-align: center;
+    margin: 0 auto;
+    img {
+      width: 2.5rem;
+      height: 2.5rem;
+      //border: 1px solid red;
+    }
+    h4 {
+      //border: 1px solid green;
+      font-size: 0.75rem;
+      margin: 0;
+      padding: 0.5rem 0;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+/*
+ * Timeline
+ */
+
+.timeline, .tagline, .tagindex, .about, .contact {
+  text-align: center;
+  margin: 0rem;
+  border-top: $border;
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  .timeline-item, .tagline-item {
+    list-style-type: none;
+    margin-top: 0rem;
+    border-bottom: 1px solid #e8e8e8;
+    padding: 2rem 0;
+
+    h3 {
+      margin: 0.25rem 0 1rem;
+
+      a {
+        color: $darkColor;
+      }
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .date {
+    margin-top: 0;
+    font-size: 1.25rem;
+    color: lighten($darkColor, 7 * $darkenShadePercent);
+  }
+
+  .tags {
+    font-size: 0.75rem;
+    color: lighten($darkColor, 3 * $darkenShadePercent);
+  }
+
+}
+
+//overrides some of the style above
+.tagindex {
+  ul {
+    padding: 2rem 0 2rem 1rem;
+    text-align: left;
+    border-top: none;
+
+    li {
+      list-style-type: none;
+      //circle;
+      padding: 0.5rem 0;
+    }
+  }
+}
+
+.about, .contact {
+  h2 {
+    margin-bottom: 2rem;
+  }
+}
+
+.contact {
+  .form-container {
+    margin: 1rem 0;
+  }
+  form {
+    text-align: left;
+
+    input, textarea {
+      width: 100%;
+      // max-width: 21rem;
+      margin-bottom: 1rem;
+    }
+
+    .submit {
+      margin: 1rem 0;
+    }
+  }
+
+  .social-container {
+    margin: 1rem;
+  }
+
+  .social-tile {
+    margin: 1rem;
+    box-sizing: border-box;
+    img {
+      width: 5rem;
+      margin: 0 auto;
+      @include opacity(0.25);
+    }
+    a {
+      margin: 1rem 0;
+      display: block;
+      text-align: center;
+      text-transform: uppercase ;
+    }
+  }
+}
+
+.article {
+
+  ul {
+    margin: 1rem 0rem 2rem;
+  }
+  li {
+    padding: 0.25rem 0rem;
+    line-height: 1.5rem;
+    font-size: 1rem;
+    //color: lighten($darkColor, 3 * $darkenShadePercent);
+  }
+}
+
+/*
+  h2 {
+    margin: 0rem 0 0.5rem;
+  }
+*/
+
+/*
+ * Buttons
+ */
+
+.button {
+  padding: $buttonPadding;
+  font-size: $buttonFontSize;
+  //font-family: 'Roboto Condensed';
+  @include border-radius($buttonBorderRadius);
+
+  &.transparent {
+    border: $border;
+    color: $darkColor;
+    background-color: $lightColor;
+
+    &:hover {
+      background-color: lighten($darkColor, 5 * $lightenShadePercent);
+      color: $lightColor;
+      border-color: transparent;
+    }
+  }
+}
+
+.button-holder {
+  margin: 3rem auto 2rem;
+  text-align: center;
+  &.two {
+    width: auto;
+    height: 3rem;
+
+    .button:first-child {
+      @include border-radius($buttonBorderRadius 0 0 $buttonBorderRadius);
+      color: darken($secondaryColor, 7 * $darkenShadePercent);
+      background-color: lighten($secondaryColor, $lightenShadePercent);
+
+      &:hover {
+        color: darken($secondaryColor, 11 * $darkenShadePercent);
+        background-color: lighten($secondaryColor, 2 *  $lightenShadePercent);
+      }
+    }
+
+    .button:last-child {
+      @include border-radius(0 $buttonBorderRadius $buttonBorderRadius 0);
+    }
+  }
+
+  .button {
+    margin: 0;
+    color: darken($secondaryColor, 6 * $darkenShadePercent);
+    background-color: $secondaryColor;
+    border: $border;
+    border-color: lighten($secondaryColor, $lightenShadePercent);
+    font-size: 1.5rem;
+    width: 11rem;
+    display: inline-block;
+    //text-transform: uppercase ;
+
+    &:hover {
+      color: darken($secondaryColor, 7 * $darkenShadePercent);
+      background-color: lighten($secondaryColor, 2 * $lightenShadePercent);
+    }
+  }
+
+}
+
+/*
+ * Helpers
+ */
+.centered-image {
+  text-align: center;
+}
+
+.paging {
+  margin: 0 auto;
+  width: 95%;
+}
+
+.icon-link {
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+  height: 3rem;
+  //border: 1px solid red;
+
+  &.older, &.newer {
+    width: 11rem;
+  }
+
+  &.archive {
+    width: 7.2rem;
+  }
+
+  &.center {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &.right {
+    float: right;
+  }
+
+  .text {
+    position: absolute;
+    height: 3rem;
+    width: 95%;
+    line-height: 3rem;
+    font-size: 1rem;
+    color: $secondaryColor;
+    text-transform: uppercase;
+
+    &:hover {
+      color: lighten($secondaryColor, 2 * $lightenShadePercent);
+    }
+  }
+
+  .text-right {
+    top: 0px;
+    left: 2.5rem
+  }
+
+  .text-left {
+    top: 0px;
+    right: 2.5rem;
+    text-align: right;
+  }
+
+  .icon {
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .icon-right {
+    top: 0.5rem;
+    right: 0px;
+  }
+
+  .icon-left {
+    top: 0.5rem;
+    left: 0px;
+  }
+}
+
+.copy {
+  border-top: $border;
+  padding: 2rem 0;
+  text-align: center;
+  font-size: 0.75rem;
+}
+
+@media (max-width: 640px) {
+  .header {
+    width: 100%;
+    margin-top: 5rem;
+    height: 240px;
+    .image {
+      //display: none;
+      float: none;
+      width: 100%;
+      .photo {
+        width: $photoSideLength;
+        margin: 0 auto 1rem;
+      }
+    }
+    h1.heading {
+      text-align: center;
+      font-size: 2rem;
+    }
+    p {
+      text-align: center;
+    }
+  }
+  nav.main-navi {
+
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 100;
+    box-sizing: border-box;
+    width: 100%;
+    height: 4rem;
+    background-color: darken($lightColor, 1 * $lightenShadePercent);
+    @include box-shadow(0px 0px 1px #333);
+
+    &.shown {
+      background-color: darken($lightColor, 14 *  $lightenShadePercent);
+    }
+
+    .navi-toggle {
+      display: block;
+      box-sizing: border-box;
+      padding: 0.5rem;
+      width: 4rem;
+      height: 4rem;
+      //background-color: lighten($darkColor, 3 * $darkenShadePercent);
+      background-color: darken($darkColor, 1 * $darkenShadePercent);
+      @include box-shadow(1px 0px 1px #333);
+
+      img {
+        width: 3rem;
+      }
+    }
+
+    ul.nav-items {
+      margin: 0 0 0 0;
+      @include translateX(-100%);
+      padding: 0;
+      float: none;
+      width: 100%;
+      height: 17rem;
+      background-color: darken($darkColor, 3 * $darkenShadePercent);
+      @include box-shadow(0px 3px 3px #333);
+
+      @include transition-property(all);
+      @include transition-duration(0.25s);
+      @include transition-timing-function('ease-in');
+
+      &.shown {
+        @include translateX(0%);
+      }
+
+      li.nav-item {
+        margin: 0;
+        text-align: left;
+        display: block;
+        width: 100%;
+
+        a {
+          border: none;
+          display: block;
+          font-size: 1rem;
+          padding: 1.1rem 0rem 1.1rem;
+          text-align: center;
+          color: $secondaryColor;
+          // lighten($darkColor, 3 * $lightenShadePercent);
+          background-color: darken($darkColor, 1 * $darkenShadePercent);
+          @include border-radius(0 0);
+        }
+      }
+    }
+
+    .button {
+      font-size: 0.7rem;
+    }
+  }
+  .content {
+    pre {
+      code {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "id": "sound",
+  "name": "Sound &amp; Music",
+  "cssClass": "sound",
+  "description": "Sound and Music",
+    "template": "tag.jade"
+}

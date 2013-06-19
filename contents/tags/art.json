@@ -1,0 +1,8 @@
+{
+  "id": "art",
+  "name": "Art",
+  "cssClass": "art",
+  "description": "Generative Art",
+  "template": "tag.jade"
+
+}

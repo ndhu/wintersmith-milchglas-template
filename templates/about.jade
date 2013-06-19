@@ -1,0 +1,12 @@
+extends layout
+
+block navigation
+    mixin nav('ABOUT')
+
+block content
+  article
+    section.content.about
+      != page.html
+
+block paging
+    span

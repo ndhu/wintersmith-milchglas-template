@@ -1,0 +1,1 @@
+due to licencing terms I'm not allowed to share the svg-icons, that are used by this template.

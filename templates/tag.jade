@@ -1,0 +1,29 @@
+extends layout
+
+block navigation
+    mixin nav('NONE')
+
+block content
+    article
+        section.content.tagline
+            h2
+                = page.metadata.name
+            - var articles = env.helpers.getArticles(contents);
+            - tagId = page.metadata.id;
+                each article in articles
+                    - var articleTags = article.metadata.tags;
+                    - if (articleTags && articleTags.indexOf(tagId) >= 0)
+                        div
+                            ul
+                                li.tagline-item
+                                    div.date
+                                        = moment(article.date).format('DD. MMMM YYYY')
+                                    div.title
+                                        h3
+                                            a(href=article.url)
+                                                = article.title
+                                    div.abstract
+                                        p
+                                            !{ typogr(article.metadata.abstract || 'no abstract').typogrify() }
+block paging
+    span

@@ -1,0 +1,24 @@
+extends layout
+
+block navigation
+  mixin nav('HOME')
+block content
+  include author
+  each article in articles
+    article.article.intro.pure-g-r
+      header.pure-u-1
+        div.date.pure-u-1
+          = moment(article.date).format('DD. MMMM YYYY')
+        h2.heading.pure-u-1
+          a(href=article.url)= article.title
+      section.content.pure-u-1
+        !{ typogr(article.intro).typogrify() }
+        if article.hasMore
+          span.more
+            a.button(href=article.url) read more
+
+include ../mixins/paging
+block paging
+    mixin paging()
+block prepend footer
+

@@ -1,0 +1,7 @@
+{
+  "id": "general",
+  "name": "General stuff",
+  "cssClass": "general",
+  "description": "general stuff" ,
+    "template": "tag.jade"
+}

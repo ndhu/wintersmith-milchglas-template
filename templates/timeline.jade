@@ -1,0 +1,38 @@
+extends layout
+
+block navigation
+    mixin nav('TIMELINE')
+block content
+  article
+    section.content.timeline
+      h2 Timeline
+      != page.html
+      - var timelist = []
+      - _.each(contents.articles._.directories, function(item) {
+      -     if (item.index.metadata.date) {
+      -         timelist.push(item.index);
+      -      }
+      - })
+      - var sorted = _.sortBy(timelist, function(item) {
+      -   return -new Date(item.metadata.date)
+      - })
+      div
+        ul
+            - for (var item in sorted) {
+            -   var currentArticleTags = (sorted[item].metadata.tags || '').split(',');
+            - // console.log("currentArticleTags " + currentArticleTags);
+              li.timeline-item
+                  div.date
+                    = moment(sorted[item].metadata.date).format('DD. MMMM YYYY')
+                  div.title
+                    h3
+                      a(href=sorted[item].url)
+                        = sorted[item].title
+                  div.tags
+                      - for (var t = 0; t < currentArticleTags.length; t++) {
+                          a.tag(href='/tags/' + currentArticleTags[t].trim() + '.html')!=currentArticleTags[t]
+                      - }
+            - }
+
+block paging
+    span

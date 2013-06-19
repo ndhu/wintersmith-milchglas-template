@@ -1,0 +1,7 @@
+{
+  "id": "jade",
+  "name": "Jade",
+  "cssClass": "jade",
+  "description": "Jade Templating Framework" ,
+    "template": "tag.jade"
+}

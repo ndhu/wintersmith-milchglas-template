@@ -1,0 +1,35 @@
+extends layout
+block content
+  include ../mixins/tag
+  != page.html
+  - var taglist = []
+  - _.each(contents.articles._.directories, function(item) {
+  -     if (item.index.metadata.tags && item.index.metadata.tags.length > 0) {
+  -       _.each(item.index.metadata.tags.split(','), function(nesteditem, index) {
+  -         taglist.push({key:nesteditem.trim(), url:item.index.url, obj:item.index, filename:item.index.filename, title:item.index.metadata.title, abstract:item.index.metadata.abstract})
+  -      })
+  -    }
+  - })
+  - var tagsGroupByKey = _.groupBy(taglist, 'key')
+  - var sortedTagKeys = _.sortBy(_.keys(tagsGroupByKey), function(item, index) {
+  -      return item.charCodeAt(0);
+  -  });
+  div.tagindex
+    h1 TAGINDEX
+    ul.tagindex
+      - for (var k in sortedTagKeys)
+        - var tagKey = sortedTagKeys[k];
+          li.tag
+          mixin tag(tagKey)
+          ul
+            - var groupedValues = tagsGroupByKey[tagKey]
+            - for (var ki in groupedValues)
+              li.tagged.row
+                h4.title
+                 a(href=groupedValues[ki].obj.url)= groupedValues[ki].title
+                p.abstract.seven.column= groupedValues[ki].abstract
+                //
+                  - var objkeys = _.keys(groupedValues[ki].obj)
+                  - for (var kk in objkeys)
+                    div.kk= objkeys[kk]
+                //div.kv= groupedValues[ki].obj._content

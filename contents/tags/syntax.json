@@ -1,0 +1,7 @@
+{
+  "id": "syntax",
+  "name": "Syntax",
+  "cssClass": "syntax",
+  "description": "Syntax",
+    "template": "tag.jade"
+}

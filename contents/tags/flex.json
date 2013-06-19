@@ -1,0 +1,7 @@
+{
+  "id": "flex",
+  "name": "Adobe Flex",
+  "cssClass": "flex",
+  "description": "Component Framework based on Adobe Flash"  ,
+    "template": "tag.jade"
+}

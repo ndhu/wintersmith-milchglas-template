@@ -1,0 +1,7 @@
+{
+  "id": "flash",
+  "name": "Adobe Flash",
+  "cssClass": "flash",
+  "description": "Adobe Flash"  ,
+    "template": "tag.jade"
+}

@@ -1,0 +1,7 @@
+{
+  "id": "junit",
+  "name": "JUnit",
+  "cssClass": "junit",
+  "description": "JUnit Testing Framework" ,
+    "template": "tag.jade"
+}

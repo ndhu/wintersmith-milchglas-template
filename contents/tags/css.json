@@ -1,0 +1,7 @@
+{
+  "id": "css",
+  "name": "CSS, Sass, Compass",
+  "cssClass": "css",
+  "description": "css, sass, compass and styles"   ,
+    "template": "tag.jade"
+}

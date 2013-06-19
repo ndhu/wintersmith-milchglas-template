@@ -1,0 +1,7 @@
+{
+  "id": "ux",
+  "name": "UX, Usability, Interface Design",
+  "cssClass": "ux",
+  "description": "all user-centric things"  ,
+    "template": "tag.jade"
+}
