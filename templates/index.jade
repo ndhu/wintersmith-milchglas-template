@@ -9,7 +9,7 @@ block content
       header.pure-u-1
         div.date.pure-u-1
           = moment(article.date).format('DD. MMMM YYYY')
-        h2.heading.pure-u-1
+        h1.heading.pure-u-1
           a(href=article.url)= article.title
       section.content.pure-u-1
         !{ typogr(article.intro).typogrify() }

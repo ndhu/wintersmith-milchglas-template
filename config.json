@@ -1,9 +1,9 @@
 {
     "locals": {
-        "url": "http://localhost:8080",
+        "url": "http://www.hulstkamp.com",
         "name": "Andy Hulstkamp",
         "owner": "Andreas Hulstkamp",
-        "description": "creating online experiences",
+        "description": "about creating online experiences",
         "signature": "AH",
         "nav": [
             {

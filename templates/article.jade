@@ -8,7 +8,7 @@ block prepend title
 
 
 block description
-    meta(name="description", content="#{ page.metadata.description }")
+    meta(name="description", content="#{ page.metadata.description || page.metadata.abstract }")
 
 block navigation
     mixin nav('none')
@@ -20,32 +20,27 @@ block content
         header.pure-u-1
             div.date.pure-u-1
                 = moment(page.metadata.date).format('DD. MMMM YYYY')
-            h2.heading.pure-u-1
-                a(href=page.metadata.url)= page.title
+            h1.heading.pure-u-1
+                = page.title
             div.tags
                 - for (var t = 0; t < currentArticleTags.length; t++) {
                     a.tag(href='/tags/' + currentArticleTags[t].trim() + '.html')!=currentArticleTags[t]
                 - }
         section.content.pure-u-1!= typogr(page.html).typogrify()
+        //TODO: refactor this out for better separation of concerns
         - var furtherReadings = [];
         - var tag;
-        - //console.log("Current Article Tags: " + currentArticleTags);
         - for (var i = 0; i < currentArticleTags.length; i++) {
         -   tag = currentArticleTags[i].trim();
-        -   //console.log("current article tag: " + tag);
         -   for (var k = 0; k < articles.length; k++) {
         -       var article = articles[k];
-        -       //console.log("Article metadata: " + article.metadata.tags);
         -       if (article.metadata && article.metadata.tags && article.metadata.tags.indexOf(tag) >= 0  && article.metadata.title != page.metadata.title) {
         -           furtherReadings.push(article);
         -       }
         -   }
         - };
-        - //console.log("Further readings: " + furtherReadings);
         - furtherReadings = _.shuffle(furtherReadings);
         - if (furtherReadings.length >= 2) {
-        -   //console.log("Further readings 0: " + furtherReadings[0].metadata.title);
-        -   //console.log("Further readings 1: " + furtherReadings[1].metadata.title);
         section.further-readings.pure-g-r
             h3 further reading
             div.further-reading-article.pure-u-1-2
@@ -63,6 +58,7 @@ block content
                     a(href=furtherReadings[1].url)
                         != furtherReadings[1].metadata.abstract
         - }
+        //TODO: refactor this out for better separation of concerns
         - var articlesTitles = _.map(articles, function(value, key, list) {
         -       return value.metadata.title;
         - });
@@ -71,8 +67,6 @@ block content
         - var nextArticle = articles[thisPageIndex+1];
         - var prevUrl = prevArticle && prevArticle.metadata ? prevArticle.url : '/';
         - var nextUrl = nextArticle && nextArticle.metadata ? nextArticle.url : '/';
-        - console.log("previous article " + prevUrl);
-        - console.log("next article " + nextUrl);
 
 include ../mixins/postNavigation.jade
 block paging

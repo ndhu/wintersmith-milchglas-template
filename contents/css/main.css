@@ -21,7 +21,8 @@ a {
   text-decoration: none;
   color: #ed6d43; }
   a:hover {
-    color: #f4a389; }
+    color: #ef7f5a;
+    text-decoration: underline; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto Slab', serif;
@@ -99,10 +100,10 @@ p {
     border: 1px solid #e7e7e7; }
   .header .signature {
     margin: 0rem auto 1rem; }
-    .header .signature h1, .header .signature p {
+    .header .signature h3, .header .signature p {
       padding: 0;
       margin: 0; }
-    .header .signature h1 {
+    .header .signature h3 {
       text-shadow: 0 1px 0px white;
       font-size: 3rem;
       line-height: 3rem;
@@ -110,11 +111,11 @@ p {
       text-transform: uppercase;
       padding: 0;
       margin: 0; }
-      .header .signature h1 a {
+      .header .signature h3 a {
         color: #143d36; }
     .header .signature p {
       color: black;
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       line-height: 2rem; }
 
 nav.main-navi {
@@ -157,7 +158,7 @@ article {
     border: 1px solid #e7e7e7;
     box-sizing: border-box;
     opacity: 1; }
-  article h2 {
+  article h1 {
     text-align: center;
     font-size: 2rem;
     padding: 0;
@@ -170,9 +171,20 @@ article {
     border-top: none; }
     article section.about {
       border-top: 1px solid #e7e7e7; }
+    article section.flash {
+      width: 980px;
+      margin: 0 auto;
+      background-color: transparent;
+      padding: 0; }
+      article section.flash .flash-detail-wrapper {
+        margin: 0 auto; }
+      article section.flash p {
+        text-align: center; }
     article section p {
       margin: 1rem 0;
       line-height: 1.75rem; }
+    article section pre code {
+      font-size: 0.8rem; }
   article img {
     margin: 1rem 0; }
   article .further-readings h3 {
@@ -220,7 +232,8 @@ footer {
       margin: 0;
       padding: 0.5rem 0; }
     footer .icon-link:hover {
-      opacity: 1; }
+      opacity: 1;
+      text-decoration: none; }
 
 /*
  * Timeline
@@ -229,6 +242,8 @@ footer {
   text-align: center;
   margin: 0rem;
   border-top: 1px solid #e7e7e7; }
+  .timeline h2, .tagline h2, .tagindex h2, .about h2, .contact h2 {
+    font-size: 2.5rem; }
   .timeline ul, .tagline ul, .tagindex ul, .about ul, .contact ul {
     margin: 0;
     padding: 0; }
@@ -353,13 +368,28 @@ footer {
     display: inline-block; }
     .button-holder .button:hover {
       color: #73250b;
-      background-color: #f19172; }
+      background-color: #f19172;
+      text-decoration: none; }
 
 /*
  * Helpers
  */
 .centered-image {
   text-align: center; }
+
+.update, .note {
+  padding: 1rem;
+  margin: 1rem 5rem;
+  -webkit-border-radius: 0.35rem 0.35rem;
+  -moz-border-radius: 0.35rem / 0.35rem;
+  border-radius: 0.35rem / 0.35rem;
+  background-color: #ed6d43;
+  color: #333333;
+  font-size: 0.9rem;
+  line-height: 1.25rem; }
+  .update a, .note a {
+    color: #333333;
+    text-decoration: underline; }
 
 .paging {
   margin: 0 auto;
@@ -424,11 +454,14 @@ footer {
       .header .image .photo {
         width: 130px;
         margin: 0 auto 1rem; }
-    .header h1.heading {
+    .header h3.heading {
       text-align: center;
       font-size: 2rem; }
     .header p {
       text-align: center; }
+
+  .container.detail-page nav.main-navi {
+    display: none; }
 
   nav.main-navi {
     position: absolute;

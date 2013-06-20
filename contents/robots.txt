@@ -10,3 +10,4 @@ Disallow: /*.mxml$
 Disallow: /*.js$
 Disallow: /*.css$
 Disallow: /*.xml$
+Disallow: /content/

@@ -17,12 +17,12 @@ html(lang='en')
             link(rel='alternate', href=locals.url+'/feed.xml', type='application/rss+xml', title=locals.description)
             link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Open+Sans')
             link(rel='stylesheet', href='http://yui.yahooapis.com/pure/0.2.0/pure-min.css')
-            link(rel='stylesheet', href='/css/main.css')
-            link(rel='stylesheet', href='/css/monokai.css')
-            //link(rel='stylesheet', href='/css/ah.min.css')
-            script(type="text/javascript", src='/scripts/highlight.pack.js').
-            script(type="text/javascript", src='/scripts/ah.js').
-            //script(type="text/javascript", src='/scripts/ah.min.js').
+            link(rel='stylesheet', href='/css/ah.min.css')
+            //link(rel='stylesheet', href='/css/main.css')
+            //link(rel='stylesheet', href='/css/monokai.css')
+            //script(type="text/javascript", src='/scripts/highlight.pack.js').
+            //script(type="text/javascript", src='/scripts/ah.js').
+            script(type="text/javascript", src='/scripts/ah.min.js').
             script(type='text/javascript').
                 var _gaq = _gaq || [];
                 _gaq.push(['_setAccount', 'UA-5499195-1']);
@@ -42,7 +42,7 @@ html(lang='en')
                                 div.image
                                     div.photo
                                 div.signature
-                                    h1.heading
+                                    h3.heading
                                         a(href=locals.url)= locals.name
                                     p.description= locals.description
             include ../mixins/nav
@@ -67,6 +67,6 @@ html(lang='en')
                             div.copy.pure-u-1
                                 span &copy; #{ new Date().getFullYear() }
                                 span  content, design &amp; template
-                                a(href='https://github.com/ndhu/downhill') &nbsp;Downhill&nbsp;
+                                a(href='https://github.com/ndhu/wintersmith-milchglas-template') &nbsp;Milchglas&nbsp;
                                 span by #{ locals.owner } &mdash; powered by&nbsp;
-                                a(href='https://github.com/jnordberg/wintersmith') Wintersmith&nbsp;SSG
+                                a(href='https://github.com/jnordberg/wintersmith') Wintersmith&nbsp;

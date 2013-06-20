@@ -76,7 +76,7 @@
             //the navi toggle element
             naviToggle = document.getElementById("naviToggle");
 
-            addEvent(naviToggle, 'click', toggleNavi, false);
+            addEvent(naviToggle, 'touchstart', toggleNavi, false);
         }
 
         return {

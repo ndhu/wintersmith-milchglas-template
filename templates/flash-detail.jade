@@ -1,12 +1,12 @@
-extends layout
+extends detail-base
 mixin useFlash(fileName)
   style.
     html, body  { height:100%; }
-    body { 
-      margin:0; padding:0; overflow:auto; text-align:left; 
-      background-color: #fafafa; 
+    body {
+      margin:0; padding:0; overflow:auto; text-align:left;
+      background-color: #fafafa;
     }
-    #flashContent { display:none; 
+    #flashContent { display:none;
     }
   script(type="text/javascript", src="swfobject.js").
   script(type="text/javascript", src="history/history.js").
@@ -33,4 +33,3 @@ block append head
 block content
   article.post
     section.content.flash!= page.html
-    a.back(href='./') &larr; BACK TO POST

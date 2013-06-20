@@ -72,7 +72,8 @@ a {
 
   &:hover {
     // text-decoration: underline;
-    color: lighten($secondaryColor, 3 * $lightenShadePercent);
+    color: lighten($secondaryColor, 1 * $lightenShadePercent);
+    text-decoration: underline ;
   }
 }
 
@@ -169,11 +170,11 @@ p {
   .signature {
     margin: 0rem auto 1rem;
 
-    h1, p {
+    h3, p {
       padding: 0;
       margin: 0;
     }
-    h1 {
+    h3 {
       //font: sans-serif;
       @include text-shadow(0 1px 0px white);
       font-size: 3rem;
@@ -190,7 +191,7 @@ p {
     }
     p {
       color: darken($headerColor, 35%);
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       line-height: 2rem;
     }
   }
@@ -249,7 +250,7 @@ article {
     opacity: $opacity;
   }
 
-  h2 {
+  h1 {
     text-align: center;
     font-size: 2rem;
     padding: 0;
@@ -268,9 +269,31 @@ article {
       border-top: $border;
     }
 
+    //flash legacy
+    &.flash {
+      width: 980px;
+      margin: 0 auto;
+      background-color: transparent;
+      padding: 0;
+
+      .flash-detail-wrapper {
+        margin: 0 auto;
+
+      }
+      p {
+        text-align: center ;
+      }
+    }
+
     p {
       margin: 1rem 0;
       line-height: 1.75rem;
+    }
+
+    pre {
+      code {
+        font-size: 0.8rem;
+      }
     }
   }
 
@@ -343,6 +366,7 @@ footer {
 
     &:hover {
       opacity: 1;
+      text-decoration: none ;
     }
   }
 }
@@ -355,6 +379,10 @@ footer {
   text-align: center;
   margin: 0rem;
   border-top: $border;
+
+  h2 {
+    font-size: 2.5rem ;
+  }
 
   ul {
     margin: 0;
@@ -532,6 +560,7 @@ footer {
     &:hover {
       color: darken($secondaryColor, 7 * $darkenShadePercent);
       background-color: lighten($secondaryColor, 2 * $lightenShadePercent);
+      text-decoration: none;
     }
   }
 
@@ -542,6 +571,21 @@ footer {
  */
 .centered-image {
   text-align: center;
+}
+
+.update, .note  {
+  padding: 1rem;
+  margin: 1rem 5rem;
+  @include border-radius(0.35rem, 0.35rem);
+  background-color: $secondaryColor;
+  color: $darkColor;
+  font-size: 0.9rem;
+  line-height: 1.25rem;
+
+  a {
+    color: $darkColor;
+    text-decoration: underline;
+  }
 }
 
 .paging {
@@ -636,7 +680,7 @@ footer {
         margin: 0 auto 1rem;
       }
     }
-    h1.heading {
+    h3.heading {
       text-align: center;
       font-size: 2rem;
     }
@@ -644,6 +688,13 @@ footer {
       text-align: center;
     }
   }
+
+  .container.detail-page {
+    nav.main-navi {
+      display: none;
+    }
+  }
+
   nav.main-navi {
 
     position: absolute;

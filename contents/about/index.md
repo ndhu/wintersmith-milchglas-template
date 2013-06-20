@@ -1,5 +1,6 @@
 ---
 title: Andreas 'Andy' Hulstkamp
+description: AH. Andy Hulstkamp. notes about creating online experiences. UX-Design, architecture & development.
 author: Andy Hulstkamp
 date: 2011-10-01 15:00
 template: about.jade
