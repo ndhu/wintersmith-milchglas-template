@@ -6,7 +6,7 @@ template: contact.jade
 type: page
 ---
 
-## Contact
+# Contact
 
 <div class="purge-g-r social-container">
     <div class="pure-u-1-4 social-tile">

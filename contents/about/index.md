@@ -7,7 +7,7 @@ template: about.jade
 type: page
 ---
 
-## About
+# About
 
 I love to create and make things and this is a place I use for experimentation, to write notes about online experiences, as a reference and an external memory.
 
