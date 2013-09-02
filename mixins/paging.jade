@@ -2,9 +2,9 @@ mixin paging()
     nav.paging.pure-g-r
         if prevPage
             a.pure-u-1-2(href=prevPage.url)
-                div.icon-link.newer.left
+                div.ah-icon-link.newer.left
                     span.text.text-right Newer posts
-                    img.icon.icon-left(src="/svg/53_b.svg")
+                    img.ah-icon.ah-icon-left(src="/svg/53_b.svg")
         else
             span.pure-u-1-2.left
         //
@@ -14,9 +14,9 @@ mixin paging()
                 img.icon.icon-left(src="/svg/90_b.svg")
         if nextPage
             a.pure-u-1-2(href=nextPage.url)
-                div.icon-link.older.right
+                div.ah-icon-link.older.right
                     span.text.text-left Older posts
-                    img.icon.icon-right(src="/svg/54_b.svg")
+                    img.ah-icon.ah-icon-right(src="/svg/54_b.svg")
         else
             span.pure-u-1-2.right
 

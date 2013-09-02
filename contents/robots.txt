@@ -11,3 +11,6 @@ Disallow: /*.js$
 Disallow: /*.css$
 Disallow: /*.xml$
 Disallow: /content/
+Disallow: /*.git*
+
+Allow: Sitemap.xml

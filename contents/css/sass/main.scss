@@ -41,6 +41,14 @@ $buttonFontSize: .8rem;
 /**
 * Global styles
 */
+
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
 html {
   font-size: 100%;
   width: 100%;
@@ -50,10 +58,12 @@ body {
   //background: white url("../img/bg-3.jpg") no-repeat top center;
   background-color: $lightColor;
   //@include background-size(cover);
+
 }
 
 .container {
   width: 100%;
+  height: 100%;
   margin: auto;
   max-width: 760px;
 
@@ -225,6 +235,8 @@ nav.main-navi {
   background-color: darken($lightColor, $lightenShadePercent);
 }
 
+
+
 .content {
   clear: both;
 
@@ -344,30 +356,35 @@ footer {
     margin: 2rem 0;
     //height: 4.2rem;
   }
-  .icon-link {
-    display: block;
-    cursor: pointer;
-    opacity: 0.25;
-    width: 5rem;
-    height: 8rem;
-    text-align: center;
-    margin: 0 auto;
-    img {
-      width: 2.5rem;
-      height: 2.5rem;
-      //border: 1px solid red;
-    }
-    h4 {
-      //border: 1px solid green;
-      font-size: 0.75rem;
-      margin: 0;
-      padding: 0.5rem 0;
-    }
+}
 
-    &:hover {
-      opacity: 1;
-      text-decoration: none ;
-    }
+.about-links {
+  height: 80px;
+}
+
+.ah-icon-link {
+  display: block;
+  cursor: pointer;
+  opacity: 0.25;
+  width: 5rem;
+  height: 8rem;
+  text-align: center;
+  margin: 0 auto;
+  img {
+    width: 2.5rem;
+    height: 2.5rem;
+    //border: 1px solid red;
+  }
+  h4 {
+    //border: 1px solid green;
+    font-size: 0.75rem;
+    margin: 0;
+    padding: 0.5rem 0;
+  }
+
+  &:hover {
+    opacity: 1;
+    text-decoration: none ;
   }
 }
 
@@ -519,6 +536,7 @@ footer {
       background-color: lighten($darkColor, 5 * $lightenShadePercent);
       color: $lightColor;
       border-color: transparent;
+      text-decoration: none;
     }
   }
 }
@@ -573,6 +591,11 @@ footer {
   text-align: center;
 }
 
+.embedded-video {
+  margin: 2rem 0;
+  text-align: center;
+}
+
 .update, .note  {
   padding: 1rem;
   margin: 1rem 5rem;
@@ -593,7 +616,7 @@ footer {
   width: 95%;
 }
 
-.icon-link {
+.ah-icon-link {
   display: block;
   position: relative;
   box-sizing: border-box;
@@ -642,18 +665,18 @@ footer {
     text-align: right;
   }
 
-  .icon {
+  .ah-icon {
     position: absolute;
     width: 2rem;
     height: 2rem;
   }
 
-  .icon-right {
+  .ah-icon-right {
     top: 0.5rem;
     right: 0px;
   }
 
-  .icon-left {
+  .ah-icon-left {
     top: 0.5rem;
     left: 0px;
   }
@@ -760,6 +783,10 @@ footer {
           // lighten($darkColor, 3 * $lightenShadePercent);
           background-color: darken($darkColor, 1 * $darkenShadePercent);
           @include border-radius(0 0);
+
+          &:hover {
+            text-decoration: none;
+          }
         }
       }
     }
@@ -774,5 +801,28 @@ footer {
         font-size: 0.8rem;
       }
     }
+  }
+}
+
+/**
+ * adjustments for dark body
+ */
+
+$darkBody: darken($darkColor, $darkenShadePercent);
+
+body.dark {
+  background-color: $darkBody;
+
+  .detail-nav {
+    background-color: darken($darkBody, $darkenShadePercent);
+  }
+
+  article section {
+    background-color: $darkBody;
+  }
+
+  .copy {
+    border-top: none;
+    color: $lightColor;
   }
 }

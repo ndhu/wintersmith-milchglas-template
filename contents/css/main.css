@@ -1,6 +1,11 @@
 /**
 * Global styles
 */
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%; }
+
 html {
   font-size: 100%;
   width: 100%; }
@@ -10,6 +15,7 @@ body {
 
 .container {
   width: 100%;
+  height: 100%;
   margin: auto;
   max-width: 760px; }
   .container.detail-page {
@@ -216,24 +222,28 @@ footer {
   border-top: 1px solid #e7e7e7; }
   footer .footer-links {
     margin: 2rem 0; }
-  footer .icon-link {
-    display: block;
-    cursor: pointer;
-    opacity: 0.25;
-    width: 5rem;
-    height: 8rem;
-    text-align: center;
-    margin: 0 auto; }
-    footer .icon-link img {
-      width: 2.5rem;
-      height: 2.5rem; }
-    footer .icon-link h4 {
-      font-size: 0.75rem;
-      margin: 0;
-      padding: 0.5rem 0; }
-    footer .icon-link:hover {
-      opacity: 1;
-      text-decoration: none; }
+
+.about-links {
+  height: 80px; }
+
+.ah-icon-link {
+  display: block;
+  cursor: pointer;
+  opacity: 0.25;
+  width: 5rem;
+  height: 8rem;
+  text-align: center;
+  margin: 0 auto; }
+  .ah-icon-link img {
+    width: 2.5rem;
+    height: 2.5rem; }
+  .ah-icon-link h4 {
+    font-size: 0.75rem;
+    margin: 0;
+    padding: 0.5rem 0; }
+  .ah-icon-link:hover {
+    opacity: 1;
+    text-decoration: none; }
 
 /*
  * Timeline
@@ -332,7 +342,8 @@ footer {
     .button.transparent:hover {
       background-color: #737373;
       color: #f4f4f4;
-      border-color: transparent; }
+      border-color: transparent;
+      text-decoration: none; }
 
 .button-holder {
   margin: 3rem auto 2rem;
@@ -377,6 +388,10 @@ footer {
 .centered-image {
   text-align: center; }
 
+.embedded-video {
+  margin: 2rem 0;
+  text-align: center; }
+
 .update, .note {
   padding: 1rem;
   margin: 1rem 5rem;
@@ -395,21 +410,21 @@ footer {
   margin: 0 auto;
   width: 95%; }
 
-.icon-link {
+.ah-icon-link {
   display: block;
   position: relative;
   box-sizing: border-box;
   height: 3rem; }
-  .icon-link.older, .icon-link.newer {
+  .ah-icon-link.older, .ah-icon-link.newer {
     width: 11rem; }
-  .icon-link.archive {
+  .ah-icon-link.archive {
     width: 7.2rem; }
-  .icon-link.center {
+  .ah-icon-link.center {
     margin: 0 auto;
     text-align: center; }
-  .icon-link.right {
+  .ah-icon-link.right {
     float: right; }
-  .icon-link .text {
+  .ah-icon-link .text {
     position: absolute;
     height: 3rem;
     width: 95%;
@@ -417,23 +432,23 @@ footer {
     font-size: 1rem;
     color: #ed6d43;
     text-transform: uppercase; }
-    .icon-link .text:hover {
+    .ah-icon-link .text:hover {
       color: #f19172; }
-  .icon-link .text-right {
+  .ah-icon-link .text-right {
     top: 0px;
     left: 2.5rem; }
-  .icon-link .text-left {
+  .ah-icon-link .text-left {
     top: 0px;
     right: 2.5rem;
     text-align: right; }
-  .icon-link .icon {
+  .ah-icon-link .ah-icon {
     position: absolute;
     width: 2rem;
     height: 2rem; }
-  .icon-link .icon-right {
+  .ah-icon-link .ah-icon-right {
     top: 0.5rem;
     right: 0px; }
-  .icon-link .icon-left {
+  .ah-icon-link .ah-icon-left {
     top: 0.5rem;
     left: 0px; }
 
@@ -540,10 +555,22 @@ footer {
           -ms-border-radius: 0 0;
           -o-border-radius: 0 0;
           border-radius: 0 0; }
+          nav.main-navi ul.nav-items li.nav-item a:hover {
+            text-decoration: none; }
     nav.main-navi .button {
       font-size: 0.7rem; }
 
   .content pre code {
     font-size: 0.8rem; } }
-
-/*@ sourceMappingURL=main.css.map */
+/**
+ * adjustments for dark body
+ */
+body.dark {
+  background-color: #262626; }
+  body.dark .detail-nav {
+    background-color: #1a1a1a; }
+  body.dark article section {
+    background-color: #262626; }
+  body.dark .copy {
+    border-top: none;
+    color: #f4f4f4; }

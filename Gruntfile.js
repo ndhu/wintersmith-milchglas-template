@@ -10,9 +10,10 @@ module.exports = function(grunt) {
     // Project configuration.
     grunt.initConfig({
         uglify: {
-            my_target: {
+            dist: {
                 files: {
-                    'contents/scripts/ah.min.js': ['contents/scripts/ah.js']
+                    'contents/scripts/ah.min.js': 'contents/scripts/ah.js',
+                    'contents/articles/ux-inline-validation-while-user-enters-value/js/ah.min.js': 'contents/articles/ux-inline-validation-while-user-enters-value/js/ah.js'
                 }
             }
         },

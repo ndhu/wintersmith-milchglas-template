@@ -3,7 +3,7 @@ title: Milchglas - a custom Wintersmith template
 abstract: A custom Wintersmith template that is compatible with Version 2.0.* of Wintersmith.
 description: A custom template for Wintersmith, a cool, simple and flexible static site generator. Template features paging, tags, archives (timeline), related post, mobile approach. source on GitHub.
 author: Andy Hulstkamp
-date: 2013-06-20
+date: 2013-06-05
 template: article.jade
 tags: tools, wintersmith, jade
 type: post

@@ -19,6 +19,12 @@ the sourcemaps can then be used by chrome canary to update the scss source file 
 ### uses grunt
 uses grunt (not needed) to minifiy and concat js and css.
 
+### build
+
+grunt
+wintersmith build
+
+
 
 
 
